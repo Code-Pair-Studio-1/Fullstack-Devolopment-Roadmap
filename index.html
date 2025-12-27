@@ -8,105 +8,109 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/*  THEME COLORS  */
 :root{
- --bg: #020617;
- --card: #0b112e;
- --card2:#0f1b4b;
- --border:#243272;
- --text:#e7eeff;
+ --blue:#2f46ff;
+ --blue2:#4d5dff;
+ --dark:#060a20;
+ --dark2:#0b1233;
+ --card:#0f173f;
+ --text:#e8ecff;
  --accent:#7afcff;
- --accent2:#8aa4ff;
- --yellow:#ffd884;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-
 body{
- background:radial-gradient(150% 150% at -10% -20%,#2a4aff10,#020617 40%);
+ background:linear-gradient(180deg,#03071c,#060d2a 40%,#07123c);
  color:var(--text);
  overflow-x:hidden;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
- padding:65px 18px 55px;
+ padding:70px 20px 60px;
  text-align:center;
- background:linear-gradient(165deg,#060d2a,#0d1645);
- border-bottom:1px solid #14246a;
+ background:linear-gradient(160deg,#060c29,#0b1441);
+ border-bottom:1px solid rgba(90,120,255,.25);
  position:relative;
 }
-header::after{
+
+header::before{
  content:"";
  position:absolute;
- width:230px;height:230px;
- top:-40px;left:-30px;
- background:radial-gradient(#56ffe4,#002d31);
- filter:blur(120px);
+ width:260px;height:260px;
+ top:-50px;left:-40px;
+ background:radial-gradient(#2f46ff,#000);
+ filter:blur(140px);
+ opacity:.7;
 }
-h1{font-size:2.2rem;color:#badaff;}
-.sub{color:#7fffe3;margin-top:6px;}
-.owner{margin-top:10px;color:#9eb7ff;}
+
+h1{
+ color:#cfd9ff;
+ font-size:2.3rem;
+ font-weight:700;
+ animation:fade .8s ease;
+}
+.sub{color:#9bffd6;margin-top:6px}
+.owner{margin-top:10px;color:#a6b9ff}
 
 .btn{
  margin-top:18px;
  display:inline-block;
  padding:12px 28px;
- border-radius:16px;
- background:linear-gradient(135deg,#75ffff,#95a0ff);
- color:#03151c;
- font-weight:700;
+ border-radius:40px;
+ background:linear-gradient(140deg,var(--blue),var(--blue2));
+ color:#f1f3ff;
  text-decoration:none;
- box-shadow:0 12px 35px rgba(110,180,255,.25);
+ font-weight:700;
+ box-shadow:0 18px 35px rgba(47,70,255,.35);
+ transition:.35s;
+}
+.btn:hover{transform:translateY(-4px) scale(1.03)}
+
+@keyframes fade{
+ from{opacity:0;transform:translateY(10px)}
+ to{opacity:1;transform:translateY(0)}
 }
 
-/* WRAPPER */
-.container{
- max-width:980px;
- margin:20px auto;
- padding:14px;
-}
+/* ===== CONTENT ===== */
+.container{max-width:980px;margin:25px auto;padding:14px}
 
-/* SECTION CARDS */
+/* SECTION CARD */
 .section{
- background:linear-gradient(150deg,var(--card),var(--card2));
- border:1px solid rgba(130,160,255,.25);
+ background:linear-gradient(150deg,var(--card),#0d1347);
  border-radius:18px;
- padding:18px 16px 18px;
+ border:1px solid rgba(110,140,255,.25);
+ padding:18px 16px;
  margin:14px 0;
- box-shadow:0 20px 45px rgba(0,0,0,.35);
+ box-shadow:0 25px 45px rgba(0,0,0,.4);
+ transition:.3s;
 }
+.section:hover{transform:translateY(-3px)}
+
 .section h2{
- color:var(--yellow);
+ color:#ffd97a;
  margin-bottom:10px;
- font-size:1.25rem;
 }
 .section h3{
- color:#9cd8ff;
+ color:#9bd6ff;
  margin-top:10px;
- font-size:1.05rem;
 }
 ul{padding-left:20px}
-li{margin:4px 0}
+li{margin:5px 0}
 
-.note{color:#7dffb1;font-size:.9rem;margin-top:7px}
-
-/* TEAM SLIDER */
+/* ===== TEAM AVATAR SLIDER ===== */
 .team{
  margin-top:30px;
- background:linear-gradient(150deg,#071028,#0c1848);
- border:1px solid rgba(135,170,255,.22);
+ background:linear-gradient(155deg,#071131,#0b184b);
  border-radius:20px;
+ border:1px solid rgba(130,160,255,.25);
  padding:20px;
 }
-
 .team h2{
  text-align:center;
+ color:#9dd4ff;
  margin-bottom:12px;
- color:#9fd4ff;
 }
-
 .slider{
  display:flex;
  overflow:hidden;
@@ -115,57 +119,71 @@ li{margin:4px 0}
 
 .slide{
  min-width:100%;
- padding:4px;
+ padding:6px;
+ display:flex;
+ justify-content:center;
 }
 
-.card{
- background:#0b1434;
- border:1px solid rgba(150,170,255,.25);
- border-radius:16px;
- padding:12px;
+.avatar-card{
+ background:#0c1436;
+ border-radius:18px;
+ border:1px solid rgba(120,150,255,.3);
+ width:260px;
+ padding:14px;
  text-align:center;
- box-shadow:0 18px 40px rgba(0,0,0,.35);
+ box-shadow:0 20px 40px rgba(0,0,0,.45);
 }
-.card img{
- width:100%;
- border-radius:12px;
- margin-bottom:8px;
+
+.avatar{
+ width:120px;
+ height:120px;
+ border-radius:50%;
+ margin-bottom:10px;
+ background:linear-gradient(140deg,#1d2b8f,#2f46ff);
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+.avatar img{
+ width:60%;
+ opacity:.9;
 }
 
 .controls{
  display:flex;
- gap:10px;
  justify-content:center;
- margin-top:14px;
+ gap:10px;
+ margin-top:13px;
 }
+
 .ctrl{
  padding:10px 22px;
  border-radius:12px;
  border:none;
- background:linear-gradient(135deg,#81fff8,#8da0ff);
- color:#03141b;
  font-weight:700;
+ background:linear-gradient(135deg,var(--blue),var(--blue2));
+ color:#f2f5ff;
  cursor:pointer;
+ transition:.25s;
 }
+.ctrl:hover{transform:scale(1.07)}
 
 /* FOOTER */
 footer{
  text-align:center;
- padding:20px 10px 35px;
- color:#9cb3ff;
- margin-top:25px;
+ padding:25px;
+ color:#a3b6ff;
+ margin-top:30px;
 }
 
-/*  MOBILE  */
+/* MOBILE */
 @media(max-width:650px){
- h1{font-size:1.7rem}
- .section{padding:14px}
- .card{padding:10px}
- .btn{padding:10px 22px}
+ h1{font-size:1.8rem}
+ .avatar-card{width:240px}
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
@@ -177,115 +195,88 @@ footer{
 
 <div class="container">
 
-<!-- PHASE 1 -->
 <div class="section">
 <h2>Phase 1 — Foundations</h2>
-
-<h3>Web & Tools</h3>
 <ul>
-<li>How the web works (Client, Server, DNS, Hosting)</li>
-<li>VS Code + Git + GitHub workflow</li>
-<li>Terminal & DevTools</li>
+<li>Client / Server / DNS / Hosting</li>
+<li>VS Code, Git, GitHub workflow</li>
+<li>Semantic HTML, forms & accessibility</li>
+<li>CSS — Flexbox, Grid, responsive layouts</li>
 </ul>
-
-<h3>HTML</h3>
-<ul>
-<li>Semantic structure + accessibility</li>
-<li>Forms, validation, media</li>
-<li>Basic SEO</li>
-</ul>
-
-<h3>CSS</h3>
-<ul>
-<li>Flexbox, Grid, responsive design</li>
-<li>Animations & transitions</li>
-<li>Tailwind / Bootstrap basics</li>
-</ul>
-
-<p class="note">Goal: Build clean, responsive websites.</p>
 </div>
 
-<!-- PHASE 2 -->
 <div class="section">
 <h2>Phase 2 — Core JavaScript</h2>
-
 <ul>
-<li>Variables, loops, functions, arrays</li>
-<li>DOM manipulation & events</li>
-<li>ES6+, Async/Await, APIs</li>
-<li>Error handling</li>
+<li>Variables, loops, arrays, functions</li>
+<li>DOM manipulation</li>
+<li>ES6+, async/await, APIs</li>
+<li>Error handling & debugging</li>
 </ul>
-
-<p class="note">Goal: Build real interactive apps.</p>
 </div>
 
-<!-- PHASE 3 -->
 <div class="section">
 <h2>Phase 3 — React + Next.js</h2>
-
 <ul>
-<li>Components, props, state</li>
-<li>Hooks, forms & validation</li>
-<li>SSR / SSG & performance</li>
-<li>Reusable UI patterns</li>
+<li>Components, hooks, forms</li>
+<li>Reusable UI & performance</li>
+li>SSR / SSG, API routes & SEO</li>
 </ul>
-
-<p class="note">Goal: Production-grade frontend.</p>
 </div>
 
-<!-- PHASE 4 -->
 <div class="section">
 <h2>Phase 4 — Backend & APIs</h2>
-
 <ul>
 <li>Node + Express REST APIs</li>
 <li>Authentication (JWT)</li>
 <li>MongoDB + PostgreSQL</li>
-<li>Security & best practices</li>
+<li>Security best practices</li>
 </ul>
-
-<p class="note">Goal: Secure scalable backend.</p>
 </div>
 
-<!-- PHASE 5 -->
 <div class="section">
 <h2>Phase 5 — DevOps & Deployment</h2>
-
 <ul>
-<li>Linux & environment variables</li>
+<li>Linux, environment variables</li>
 <li>Docker basics</li>
-<li>Deploy — Vercel / Render / AWS</li>
+<li>Deploy to Vercel / Render / AWS</li>
 <li>Monitoring & performance</li>
 </ul>
-
-<p class="note">Goal: Deploy live apps.</p>
 </div>
 
-<!-- TEAM  -->
+<!-- TEAM -->
 <div class="team">
 <h2>Our Team</h2>
 
 <div class="slider" id="slider">
+
   <div class="slide">
-    <div class="card">
-      <img src="sayantan.png">
-      <p><strong>Sayantan Ghosh</strong><br>Code Pair Studio Teacher</p>
+    <div class="avatar-card">
+      <div class="avatar">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png">
+      </div>
+      <p><strong>Teacher 1</strong><br>Full-Stack Mentor</p>
     </div>
   </div>
 
   <div class="slide">
-    <div class="card">
-      <img src="soham.png">
-      <p><strong>Soham Dutta</strong><br>Code Pair Studio Teacher</p>
+    <div class="avatar-card">
+      <div class="avatar">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png">
+      </div>
+      <p><strong>Teacher 2</strong><br>Frontend Mentor</p>
     </div>
   </div>
 
   <div class="slide">
-    <div class="card">
-      <img src="Milon.png">
-      <p><strong>Achinta Bej</strong><br>Code Pair Studio Teacher</p>
+    <div class="avatar-card">
+      <div class="avatar">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png">
+      </div>
+      <p><strong>Teacher 3</strong><br>Backend Mentor</p>
     </div>
   </div>
+
 </div>
 
 <div class="controls">
@@ -298,7 +289,7 @@ footer{
 </div>
 
 <footer>
-© Code Pair Studio — Professional Roadmap
+© Code Pair Studio — Blue Dark Theme Edition
 </footer>
 
 <script>
