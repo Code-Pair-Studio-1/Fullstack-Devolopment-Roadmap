@@ -1,263 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Code Pair Studio — Industry Level Full-Stack Roadmap</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Pair Studio — Advanced Full-Stack Roadmap</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial,Helvetica}
-body{background:#050814;color:#dfe6ff;}
-header{
-  padding:25px;
-  text-align:center;
-  background:linear-gradient(140deg,#0b1230,#0e1c49);
-  border-bottom:1px solid #1d2e66;
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins"}
+body{
+  background:radial-gradient(120% 120% at 20% -10%,#1f4aff,#050714);
+  color:#e9ecff;
+  overflow-x:hidden;
 }
-header h1{color:#9ae6ff;font-size:2.2rem}
-header h2{color:#b8c7ff;margin-top:6px}
-header p{margin-top:10px;color:#89c7ff}
 
-.container{max-width:1150px;margin:25px auto;padding:20px}
+/* ---------- HEADER ---------- */
+header{
+  text-align:center;
+  padding:60px 15px;
+  background:linear-gradient(135deg,#0a0f2c,#0e1045);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+  position:relative;
+}
+header::after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  background:linear-gradient(225deg,#6cfffb,#905dff);
+  filter:blur(130px);
+  top:5%;left:10%;
+}
+h1{
+  font-size:2.3rem;
+  color:#a6cdff;
+}
+.tag{
+  margin-top:6px;
+  color:#94ffdd;
+}
+.owner{
+  margin-top:15px;
+  color:#9cb4ff;
+}
+
+/* ---------- BUTTON ---------- */
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 24px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#5affff,#7f7eff);
+  color:#08121b;
+  font-weight:600;
+  text-decoration:none;
+  transition:.4s;
+}
+.btn:hover{
+  transform:scale(1.05) translateY(-3px);
+  box-shadow:0 10px 25px rgba(90,255,255,.4);
+}
+
+/* ---------- SECTIONS ---------- */
+.container{max-width:1050px;margin:40px auto;padding:18px}
 
 .section{
-  border:1px solid #1a2750;
-  margin-bottom:18px;
-  padding:18px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#0a1228,#0d1838);
-  box-shadow:0 12px 24px rgba(0,0,0,.25);
+  margin-bottom:25px;
+  padding:20px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#0e1741,#101c51);
+  box-shadow:0 25px 45px rgba(0,0,0,.4);
+  border:1px solid rgba(107,139,255,.25);
+  transition:.4s;
+}
+.section:hover{
+  transform:translateY(-4px);
+  border-color:#8cbbff;
 }
 .section h2{
-  color:#ffd36e;
+  color:#ffd677;
   margin-bottom:10px;
-  font-size:1.4rem;
 }
-.section h3{
-  color:#8bd5ff;
-  margin-top:10px;
-  margin-bottom:6px;
-  font-size:1.05rem;
-}
-ul{padding-left:18px;margin-top:6px}
-li{margin:4px 0;color:#d9e4ff}
+.section h3{color:#8ad7ff;margin:10px 0 5px}
 
+/* LIST */
+ul{padding-left:18px}
+li{margin:4px 0}
+
+/* ---------- TEAM SLIDER ---------- */
+.team-section{
+  margin-top:35px;
+  padding:25px;
+  border-radius:18px;
+  background:linear-gradient(160deg,#0b1130,#131b4f);
+  border:1px solid rgba(113,170,255,.25);
+}
+.team-title{
+  color:#90d6ff;
+  text-align:center;
+  margin-bottom:10px;
+}
+.slider{
+  display:flex;
+  gap:16px;
+  overflow:hidden;
+  position:relative;
+}
+.member{
+  min-width:240px;
+  background:#0f183b;
+  border-radius:14px;
+  padding:12px;
+  border:1px solid rgba(124,165,255,.25);
+  text-align:center;
+  transition:.4s;
+}
+.member:hover{
+  transform:scale(1.06);
+  box-shadow:0 15px 40px rgba(114,161,255,.4);
+}
+.member img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:8px;
+}
+
+/* ---------- FOOTER ---------- */
 footer{
   text-align:center;
-  padding:20px;
-  color:#7fa4ff;
-  border-top:1px solid #1a2750;
-  margin-top:30px;
+  padding:25px;
+  color:#8ea9ff;
 }
-.note{color:#8cf3a3;font-size:.9rem;margin-top:6px}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:650px){
+  h1{font-size:1.6rem}
+  .member{min-width:180px}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Code Pair Studio — Advanced Full-Stack Developer Roadmap</h1>
-  <h2>Owner: Code Pair Studio</h2>
-  <p>Complete Beginner → Advanced → Industry Ready</p>
+  <h1>Code Pair Studio — Full-Stack Developer Roadmap</h1>
+  <p class="tag">Beginner → Advanced → Industry Ready</p>
+  <p class="owner">Owner — Code Pair Studio</p>
+  <a href="#" class="btn">Start Learning</a>
 </header>
 
 <div class="container">
 
-<!-- PHASE 1 -->
+<!-- SECTION EXAMPLE (you can add more if needed) -->
 <div class="section">
-<h2>Phase 1 — Foundations (Absolute Beginner)</h2>
+  <h2>Phase 1 — Foundations</h2>
+  <h3>Web & Tools</h3>
+  <ul>
+    <li>How the web works</li>
+    <li>VS Code + Git + GitHub</li>
+    <li>Basic terminal commands</li>
+  </ul>
 
-<h3>Computer & Internet Basics</h3>
-<ul>
-<li>How websites work (Client / Server)</li>
-<li>Domain, Hosting, DNS, HTTP vs HTTPS</li>
-<li>Browser Developer Tools</li>
-</ul>
-
-<h3>Essential Tools</h3>
-<ul>
-<li>VS Code + extensions</li>
-<li>Node.js & npm</li>
-<li>Git & GitHub (clone, push, pull, branch)</li>
-<li>Terminal / command line basics</li>
-</ul>
-
-<h3>HTML — Complete</h3>
-<ul>
-<li>Semantic structure</li>
-<li>Forms and validation</li>
-<li>Media (images, video, audio)</li>
-<li>Accessibility & basic SEO</li>
-</ul>
-
-<h3>CSS — Complete</h3>
-<ul>
-<li>Selectors & Box Model</li>
-<li>Flexbox & Grid</li>
-<li>Responsive (Mobile-first)</li>
-<li>Animations & transitions</li>
-<li>Tailwind or Bootstrap (overview)</li>
-</ul>
-
-<p class="note">Goal: Build clean, modern, responsive websites.</p>
+  <h3>HTML & CSS</h3>
+  <ul>
+    <li>Structure + semantics</li>
+    <li>Flexbox & Grid</li>
+    <li>Responsive layouts</li>
+  </ul>
 </div>
 
-<!-- PHASE 2 -->
 <div class="section">
-<h2>Phase 2 — Core JavaScript</h2>
-
-<h3>JavaScript Fundamentals</h3>
-<ul>
-<li>Variables, data types, operators</li>
-<li>If/else, loops</li>
-<li>Arrays & objects</li>
-<li>Functions, scope</li>
-</ul>
-
-<h3>DOM & Events</h3>
-<ul>
-<li>DOM tree</li>
-<li>Event listeners</li>
-<li>Dynamic UI</li>
-<li>Form handling</li>
-</ul>
-
-<h3>Modern JavaScript (ES6+)</h3>
-<ul>
-<li>Destructuring, spread, rest</li>
-<li>Modules (import/export)</li>
-<li>Promises & async/await</li>
-<li>Error handling</li>
-</ul>
-
-<h3>Working With APIs</h3>
-<ul>
-<li>JSON</li>
-<li>Fetch API</li>
-<li>Display & filter API data</li>
-</ul>
-
-<p class="note">Goal: Build real interactive applications.</p>
+  <h2>Phase 2 — JavaScript</h2>
+  <ul>
+    <li>Variables, functions, loops, arrays</li>
+    <li>DOM manipulation</li>
+    <li>ES6+, Async/Await, APIs</li>
+  </ul>
 </div>
 
-<!-- PHASE 3 -->
 <div class="section">
-<h2>Phase 3 — Frontend Framework</h2>
-
-<h3>React</h3>
-<ul>
-<li>Components, props, state</li>
-<li>Hooks (useState, useEffect)</li>
-<li>Conditional rendering</li>
-<li>Lists & keys</li>
-<li>Forms & validation</li>
-</ul>
-
-<h3>Advanced React</h3>
-<ul>
-<li>Context API</li>
-<li>Custom hooks</li>
-<li>Performance optimization</li>
-<li>Code splitting</li>
-</ul>
-
-<h3>Next.js</h3>
-<ul>
-<li>Routing & layouts</li>
-<li>SSR vs SSG</li>
-<li>API routes</li>
-<li>SEO optimization</li>
-</ul>
-
-<p class="note">Goal: Professional production-grade frontend.</p>
+  <h2>Phase 3 — Frontend (React + Next.js)</h2>
+  <ul>
+    <li>React Components & Hooks</li>
+    <li>Next.js Routing + SSR</li>
+    <li>Forms, validation & performance</li>
+  </ul>
 </div>
 
-<!-- PHASE 4 -->
 <div class="section">
-<h2>Phase 4 — Backend Development</h2>
-
-<h3>Node.js & Express</h3>
-<ul>
-<li>REST APIs</li>
-<li>Routing & middleware</li>
-<li>Controllers & services</li>
-<li>Error handling</li>
-</ul>
-
-<h3>Authentication & Security</h3>
-<ul>
-<li>JWT authentication</li>
-<li>Password hashing</li>
-<li>Validation</li>
-<li>Rate limiting & security best practices</li>
-</ul>
-
-<h3>Databases</h3>
-<ul>
-<li>MongoDB with Mongoose</li>
-<li>PostgreSQL — relationships & joins</li>
-<li>Schema design & indexing</li>
-</ul>
-
-<p class="note">Goal: Secure, scalable backend APIs.</p>
+  <h2>Phase 4 — Backend (Node + Express)</h2>
+  <ul>
+    <li>REST APIs & routing</li>
+    <li>Authentication (JWT)</li>
+    <li>MongoDB / PostgreSQL</li>
+  </ul>
 </div>
 
-<!-- PHASE 5 -->
 <div class="section">
-<h2>Phase 5 — DevOps & Cloud</h2>
-
-<h3>DevOps Basics</h3>
-<ul>
-<li>Linux commands</li>
-<li>Environment variables</li>
-<li>Docker basics</li>
-</ul>
-
-<h3>Deployment</h3>
-<ul>
-<li>Vercel / Render</li>
-<li>AWS basics</li>
-<li>CI/CD with GitHub Actions</li>
-</ul>
-
-<h3>Monitoring & Performance</h3>
-<ul>
-<li>Logs & debugging</li>
-<li>Error monitoring</li>
-<li>Performance optimization</li>
-</ul>
-
-<p class="note">Goal: Deploy and manage real live apps.</p>
+  <h2>Phase 5 — DevOps & Deployment</h2>
+  <ul>
+    <li>Linux + Environment variables</li>
+    <li>Docker basics</li>
+    <li>Deploy to Vercel, Render, AWS</li>
+  </ul>
 </div>
 
-<!-- FINAL -->
-<div class="section">
-<h2>Final Stage — Industry Portfolio</h2>
+<!-- TEAM SECTION -->
+<div class="team-section">
+  <h2 class="team-title">Meet Our Team</h2>
 
-<h3>Must-Build Projects</h3>
-<ul>
-<li>Full-stack blog</li>
-<li>E-commerce app</li>
-<li>LMS / course platform</li>
-<li>Personal portfolio website</li>
-</ul>
+  <div class="slider" id="slider">
+    <div class="member">
+      <img src="https://picsum.photos/400/250?1">
+      <p><strong>Developer A</strong><br>Frontend Engineer</p>
+    </div>
 
-<h3>Job Preparation</h3>
-<ul>
-<li>GitHub cleanup & documentation</li>
-<li>Resume optimized for ATS</li>
-<li>Interview preparation</li>
-<li>Freelancing fundamentals</li>
-</ul>
+    <div class="member">
+      <img src="https://picsum.photos/400/250?2">
+      <p><strong>Developer B</strong><br>Full-Stack Engineer</p>
+    </div>
 
-<p class="note">Result: You are job-ready.</p>
+    <div class="member">
+      <img src="https://picsum.photos/400/250?3">
+      <p><strong>Developer C</strong><br>Backend Specialist</p>
+    </div>
+
+    <div class="member">
+      <img src="https://picsum.photos/400/250?4">
+      <p><strong>Developer D</strong><br>Cloud Engineer</p>
+    </div>
+  </div>
 </div>
 
 </div>
 
 <footer>
-© Code Pair Studio — Industry Level Full-Stack Roadmap
+© Code Pair Studio — Modern Full-Stack Roadmap
 </footer>
+
+<script>
+const slider=document.getElementById("slider");
+setInterval(()=>{
+  slider.scrollBy({left:260,behavior:"smooth"});
+  if(slider.scrollLeft+slider.clientWidth>=slider.scrollWidth){
+    slider.scrollTo({left:0,behavior:"smooth"});
+  }
+},2500);
+</script>
 
 </body>
 </html>
