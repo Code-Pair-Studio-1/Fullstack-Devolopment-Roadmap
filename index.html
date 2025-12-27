@@ -3,358 +3,329 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Code Pair Studio — Industry Level Full-Stack Roadmap</title>
+<title>Code Pair Studio — Full-Stack Developer Roadmap</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{
-  background:#020617;
-  color:#dfe9ff;
-  overflow-x:hidden;
+
+/*  THEME COLORS  */
+:root{
+ --bg: #020617;
+ --card: #0b112e;
+ --card2:#0f1b4b;
+ --border:#243272;
+ --text:#e7eeff;
+ --accent:#7afcff;
+ --accent2:#8aa4ff;
+ --yellow:#ffd884;
 }
 
-/* ====== HEADER ====== */
-header{
-  text-align:center;
-  padding:70px 16px;
-  background:linear-gradient(160deg,#03091f,#07133c);
-  position:relative;
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+
+body{
+ background:radial-gradient(150% 150% at -10% -20%,#2a4aff10,#020617 40%);
+ color:var(--text);
+ overflow-x:hidden;
 }
-header::before{
-  content:"";
-  position:absolute;
-  width:220px;height:220px;
-  top:-30px;right:-20px;
-  background:radial-gradient(#6b9bff,#0e1a53);
-  filter:blur(120px);
+
+/* HEADER */
+header{
+ padding:65px 18px 55px;
+ text-align:center;
+ background:linear-gradient(165deg,#060d2a,#0d1645);
+ border-bottom:1px solid #14246a;
+ position:relative;
 }
 header::after{
-  content:"";
-  position:absolute;
-  width:200px;height:200px;
-  bottom:-40px;left:-30px;
-  background:radial-gradient(#00ffd4,#00283a);
-  filter:blur(110px);
+ content:"";
+ position:absolute;
+ width:230px;height:230px;
+ top:-40px;left:-30px;
+ background:radial-gradient(#56ffe4,#002d31);
+ filter:blur(120px);
 }
-h1{color:#a9c9ff;font-size:2.5rem;font-weight:700;}
-.sub{color:#7ffff2;margin-top:6px;}
-.owner{margin-top:8px;color:#9fb4ff;}
+h1{font-size:2.2rem;color:#badaff;}
+.sub{color:#7fffe3;margin-top:6px;}
+.owner{margin-top:10px;color:#9eb7ff;}
+
 .btn{
-  margin-top:20px;
-  display:inline-block;
-  padding:10px 28px;
-  border-radius:50px;
-  background:linear-gradient(135deg,#5affff,#7f7eff);
-  color:#021421;
-  text-decoration:none;
-  font-weight:700;
-  transition:.4s;
+ margin-top:18px;
+ display:inline-block;
+ padding:12px 28px;
+ border-radius:16px;
+ background:linear-gradient(135deg,#75ffff,#95a0ff);
+ color:#03151c;
+ font-weight:700;
+ text-decoration:none;
+ box-shadow:0 12px 35px rgba(110,180,255,.25);
 }
-.btn:hover{transform:translateY(-3px) scale(1.05);}
 
-/* ====== CONTAINER ====== */
-.container{max-width:1150px;margin:36px auto;padding:18px}
+/* WRAPPER */
+.container{
+ max-width:980px;
+ margin:20px auto;
+ padding:14px;
+}
 
-/* ====== CARD SECTIONS ====== */
+/* SECTION CARDS */
 .section{
-  margin-bottom:22px;
-  padding:20px;
-  border-radius:16px;
-  background:linear-gradient(140deg,#060d2a,#0c1647);
-  border:1px solid rgba(130,160,255,.25);
-  box-shadow:0 25px 40px rgba(0,0,0,.45);
-  transition:.35s;
+ background:linear-gradient(150deg,var(--card),var(--card2));
+ border:1px solid rgba(130,160,255,.25);
+ border-radius:18px;
+ padding:18px 16px 18px;
+ margin:14px 0;
+ box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
-.section:hover{
-  transform:translateY(-4px);
-  border-color:#9fd0ff;
+.section h2{
+ color:var(--yellow);
+ margin-bottom:10px;
+ font-size:1.25rem;
+}
+.section h3{
+ color:#9cd8ff;
+ margin-top:10px;
+ font-size:1.05rem;
+}
+ul{padding-left:20px}
+li{margin:4px 0}
+
+.note{color:#7dffb1;font-size:.9rem;margin-top:7px}
+
+/* TEAM SLIDER */
+.team{
+ margin-top:30px;
+ background:linear-gradient(150deg,#071028,#0c1848);
+ border:1px solid rgba(135,170,255,.22);
+ border-radius:20px;
+ padding:20px;
 }
 
-.section h2{color:#ffd77b;margin-bottom:12px;font-size:1.3rem;}
-.section h3{color:#94d9ff;margin-top:10px;margin-bottom:6px;font-size:1.05rem;}
-ul{padding-left:20px;}
-li{margin:5px 0;color:#e0e9ff;}
-.note{color:#76ffb3;margin-top:8px;font-size:.9rem;}
-
-/* ===== TEAM SLIDER ===== */
-.team-wrapper{
-  margin-top:35px;
-  padding:25px;
-  border-radius:18px;
-  background:linear-gradient(150deg,#050c28,#0c1648);
-  border:1px solid rgba(110,150,255,.25);
-}
-.team-title{
-  text-align:center;
-  color:#9fceff;
-  font-weight:600;
-  margin-bottom:12px;
+.team h2{
+ text-align:center;
+ margin-bottom:12px;
+ color:#9fd4ff;
 }
 
-/* slider container */
 .slider{
-  display:flex;
-  overflow:hidden;
-  position:relative;
-  scroll-behavior:smooth;
+ display:flex;
+ overflow:hidden;
+ scroll-behavior:smooth;
 }
 
-/* each card should fill width */
-.member{
-  min-width:100%;
-  padding:18px;
-  text-align:center;
-  transition:.4s;
+.slide{
+ min-width:100%;
+ padding:4px;
 }
+
 .card{
-  background:#0c1438;
-  border:1px solid rgba(120,160,255,.35);
-  border-radius:14px;
-  padding:14px;
-  box-shadow:0 18px 35px rgba(0,0,0,.45);
+ background:#0b1434;
+ border:1px solid rgba(150,170,255,.25);
+ border-radius:16px;
+ padding:12px;
+ text-align:center;
+ box-shadow:0 18px 40px rgba(0,0,0,.35);
 }
 .card img{
-  width:100%;
-  border-radius:10px;
-  margin-bottom:8px;
+ width:100%;
+ border-radius:12px;
+ margin-bottom:8px;
 }
-.card:hover{transform:scale(1.02);}
 
-/* slider buttons */
 .controls{
-  margin-top:15px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
+ display:flex;
+ gap:10px;
+ justify-content:center;
+ margin-top:14px;
 }
 .ctrl{
-  padding:8px 18px;
-  border-radius:40px;
-  border:none;
-  background:linear-gradient(135deg,#77ffff,#8893ff);
-  color:#03131f;
-  cursor:pointer;
-  font-weight:600;
-  transition:.3s;
+ padding:10px 22px;
+ border-radius:12px;
+ border:none;
+ background:linear-gradient(135deg,#81fff8,#8da0ff);
+ color:#03141b;
+ font-weight:700;
+ cursor:pointer;
 }
-.ctrl:hover{transform:scale(1.07);}
 
+/* FOOTER */
 footer{
-  text-align:center;
-  padding:25px;
-  margin-top:40px;
-  color:#9bbaff;
+ text-align:center;
+ padding:20px 10px 35px;
+ color:#9cb3ff;
+ margin-top:25px;
 }
+
+/*  MOBILE  */
 @media(max-width:650px){
-  h1{font-size:1.8rem;}
+ h1{font-size:1.7rem}
+ .section{padding:14px}
+ .card{padding:10px}
+ .btn{padding:10px 22px}
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
   <h1>Code Pair Studio — Full-Stack Developer Roadmap</h1>
   <p class="sub">Beginner → Advanced → Industry Ready</p>
-  <p class="owner">Owner: Code Pair Studio</p>
-  <a class="btn" href="#">Start Learning</a>
+  <p class="owner">Owner — Code Pair Studio</p>
+  <a href="#" class="btn">Start Learning</a>
 </header>
 
 <div class="container">
 
-<!-- FOUNDATIONS -->
+<!-- PHASE 1 -->
 <div class="section">
-<h2>Phase 1 — Foundations (Absolute Beginner)</h2>
+<h2>Phase 1 — Foundations</h2>
 
 <h3>Web & Tools</h3>
 <ul>
-<li>How the Web Works — Client, Server, DNS, Hosting</li>
-<li>VS Code, Extensions, Git & GitHub workflow</li>
-<li>Terminal & developer tools</li>
+<li>How the web works (Client, Server, DNS, Hosting)</li>
+<li>VS Code + Git + GitHub workflow</li>
+<li>Terminal & DevTools</li>
 </ul>
 
-<h3>HTML (Complete)</h3>
+<h3>HTML</h3>
 <ul>
-<li>Semantic structure & accessibility</li>
-<li>Forms, validation, tables, media</li>
-<li>Basic SEO concepts</li>
+<li>Semantic structure + accessibility</li>
+<li>Forms, validation, media</li>
+<li>Basic SEO</li>
 </ul>
 
-<h3>CSS (Complete)</h3>
+<h3>CSS</h3>
 <ul>
-<li>Flexbox & Grid</li>
-<li>Responsive layouts (mobile-first)</li>
-<li>Animations, shadows, transitions</li>
-<li>Tailwind / Bootstrap overview</li>
+<li>Flexbox, Grid, responsive design</li>
+<li>Animations & transitions</li>
+<li>Tailwind / Bootstrap basics</li>
 </ul>
 
-<p class="note">Goal: Build clean, modern, responsive websites.</p>
+<p class="note">Goal: Build clean, responsive websites.</p>
 </div>
 
-<!-- JAVASCRIPT -->
+<!-- PHASE 2 -->
 <div class="section">
 <h2>Phase 2 — Core JavaScript</h2>
 
-<h3>Fundamentals</h3>
 <ul>
 <li>Variables, loops, functions, arrays</li>
-<li>Objects, scope, JSON</li>
+<li>DOM manipulation & events</li>
+<li>ES6+, Async/Await, APIs</li>
 <li>Error handling</li>
 </ul>
 
-<h3>DOM & ES6+</h3>
-<ul>
-<li>DOM manipulation</li>
-<li>Events</li>
-<li>Destructuring, spread, modules</li>
-<li>Async/Await + APIs</li>
-</ul>
-
-<p class="note">Goal: Build real-world interactive apps.</p>
+<p class="note">Goal: Build real interactive apps.</p>
 </div>
 
-<!-- FRONTEND -->
+<!-- PHASE 3 -->
 <div class="section">
 <h2>Phase 3 — React + Next.js</h2>
 
-<h3>React Basics</h3>
 <ul>
 <li>Components, props, state</li>
-<li>Hooks (useState, useEffect)</li>
+<li>Hooks, forms & validation</li>
+<li>SSR / SSG & performance</li>
 <li>Reusable UI patterns</li>
 </ul>
 
-<h3>Advanced React</h3>
-<ul>
-<li>Context API</li>
-<li>Custom hooks</li>
-<li>Performance optimization</li>
-</ul>
-
-<h3>Next.js</h3>
-<ul>
-<li>Routing & layouts</li>
-<li>SSR / SSG</li>
-<li>API routes</li>
-<li>SEO optimization</li>
-</ul>
-
-<p class="note">Goal: Production-ready frontend.</p>
+<p class="note">Goal: Production-grade frontend.</p>
 </div>
 
-<!-- BACKEND -->
+<!-- PHASE 4 -->
 <div class="section">
 <h2>Phase 4 — Backend & APIs</h2>
 
-<h3>Node & Express</h3>
 <ul>
-<li>REST APIs</li>
-<li>Routing, middleware</li>
-<li>Controllers & services</li>
+<li>Node + Express REST APIs</li>
+<li>Authentication (JWT)</li>
+<li>MongoDB + PostgreSQL</li>
+<li>Security & best practices</li>
 </ul>
 
-<h3>Security</h3>
-<ul>
-<li>JWT authentication</li>
-<li>Password hashing</li>
-<li>Validation & rate limiting</li>
-</ul>
-
-<h3>Databases</h3>
-<ul>
-<li>MongoDB + Mongoose</li>
-<li>PostgreSQL — relations & indexing</li>
-</ul>
-
-<p class="note">Goal: Secure, scalable backend.</p>
+<p class="note">Goal: Secure scalable backend.</p>
 </div>
 
-<!-- DEVOPS -->
+<!-- PHASE 5 -->
 <div class="section">
 <h2>Phase 5 — DevOps & Deployment</h2>
 
 <ul>
-<li>Linux basics</li>
-<li>Environment variables</li>
+<li>Linux & environment variables</li>
 <li>Docker basics</li>
-<li>Deploy using Vercel / Render / AWS</li>
-<li>Monitoring & debugging</li>
+<li>Deploy — Vercel / Render / AWS</li>
+<li>Monitoring & performance</li>
 </ul>
 
-<p class="note">Goal: Deploy live applications confidently.</p>
+<p class="note">Goal: Deploy live apps.</p>
 </div>
 
-<!-- TEAM SLIDER -->
-<div class="team-wrapper">
-  <h2 class="team-title">Our Team</h2>
+<!-- TEAM  -->
+<div class="team">
+<h2>Our Team</h2>
 
-  <div class="slider" id="slider">
-
-    <div class="member">
-      <div class="card">
-        <img src="https://picsum.photos/900/450?1">
-        <p><strong>Developer A</strong><br>Frontend Engineer</p>
-      </div>
+<div class="slider" id="slider">
+  <div class="slide">
+    <div class="card">
+      <img src="sayantan.png">
+      <p><strong>Sayantan Ghosh</strong><br>Code Pair Studio Teacher</p>
     </div>
-
-    <div class="member">
-      <div class="card">
-        <img src="https://picsum.photos/900/450?2">
-        <p><strong>Developer B</strong><br>Full-Stack Engineer</p>
-      </div>
-    </div>
-
-    <div class="member">
-      <div class="card">
-        <img src="https://picsum.photos/900/450?3">
-        <p><strong>Developer C</strong><br>Backend Specialist</p>
-      </div>
-    </div>
-
   </div>
 
-  <div class="controls">
-    <button class="ctrl" onclick="prev()">Prev</button>
-    <button class="ctrl" onclick="next()">Next</button>
+  <div class="slide">
+    <div class="card">
+      <img src="soham.png">
+      <p><strong>Soham Dutta</strong><br>Code Pair Studio Teacher</p>
+    </div>
   </div>
+
+  <div class="slide">
+    <div class="card">
+      <img src="Milon.png">
+      <p><strong>Achinta Bej</strong><br>Code Pair Studio Teacher</p>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <button class="ctrl" onclick="prev()">Prev</button>
+  <button class="ctrl" onclick="next()">Next</button>
+</div>
+
 </div>
 
 </div>
 
 <footer>
-© Code Pair Studio — Professional Full-Stack Roadmap
+© Code Pair Studio — Professional Roadmap
 </footer>
 
 <script>
-let slider = document.getElementById("slider");
-let index = 0;
+let slider=document.getElementById("slider");
+let index=0;
 
-function showSlide(){
-  slider.scrollTo({
-    left: slider.clientWidth * index,
-    behavior: "smooth"
-  });
+function show(){
+ slider.scrollTo({
+   left: slider.clientWidth * index,
+   behavior:"smooth"
+ });
 }
 
 function next(){
-  index++;
-  if(index >= slider.children.length){ index = 0; }
-  showSlide();
+ index++;
+ if(index>=slider.children.length) index=0;
+ show();
 }
 
 function prev(){
-  index--;
-  if(index < 0){ index = slider.children.length - 1; }
-  showSlide();
+ index--;
+ if(index<0) index=slider.children.length-1;
+ show();
 }
 
-/* auto slide */
-setInterval(next, 3000);
+setInterval(next,3500);
 </script>
 
 </body>
 </html>
-
-
